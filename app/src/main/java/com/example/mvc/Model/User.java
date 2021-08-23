@@ -23,12 +23,8 @@ public class User implements iUser{
 
     @Override
     public int isValid() {
-        if(TextUtils.isEmpty(getEmail()))
-            return  0;
-        if(TextUtils.isEmpty(getPassword()))
-            return 1;
         if (email.equals("jaytailor@gmail.com") && password.equals("jaytailor123"))
-                return 2;
-        else return 3;
+                return 1;
+        else return 0;
     }
 }

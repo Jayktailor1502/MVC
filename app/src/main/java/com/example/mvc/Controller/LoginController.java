@@ -15,11 +15,9 @@ public class LoginController implements iLoginController{
     public void OnLogin(String email, String Password) {
         User user = new User( email , Password);
         int loginCode = user.isValid();
-        if (loginCode == 0 )
-            iLoginView.OnDestroy("Please enter email");
         if (loginCode == 1)
-            iLoginView.OnDestroy("Please enter password");
-        if (loginCode == 2)
             iLoginView.OnSuccess("Login Success");
+        if (loginCode == 0)
+            iLoginView.OnDestroy("Login Failed");
     }
 }
